@@ -11,10 +11,10 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        EnemyShooting enemy = collision.GetComponent<EnemyShooting>();
+        Health enemy = collision.GetComponent<Health>();
         if (enemy != null)
         {
-            Destroy(collision.gameObject);
+            enemy.GetDamage(1);
         }
         Destroy(gameObject);
     }
